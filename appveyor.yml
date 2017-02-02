@@ -1,6 +1,6 @@
 #Publish to PowerShell Gallery with this key
 environment:
-  my_variable:
+  NuGetApiKey:
     secure: UR2BYlWrmMLdblFfoWkJWlELKz3QhCy0ETah9wJO5Dr/GuUjArGxghDEH2FDyczZ
 
 # Skip on updates to the readme.
