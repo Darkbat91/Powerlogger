@@ -1,0 +1,7 @@
+environment:
+  my_variable:
+    secure: UR2BYlWrmMLdblFfoWkJWlELKz3QhCy0ETah9wJO5Dr/GuUjArGxghDEH2FDyczZ
+test_script:
+  - ps: . .\Build\build.ps1
+
+	
