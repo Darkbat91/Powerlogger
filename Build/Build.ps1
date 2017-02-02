@@ -1,3 +1,6 @@
+param(
+    $Task = 'Default'
+)
 
 Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 
