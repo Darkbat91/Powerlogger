@@ -1,5 +1,5 @@
 @{
-ID = 'e5856b24-e714-4005-873a-0cd22cd9698e'
+GUID = 'e5856b24-e714-4005-873a-0cd22cd9698e'
 ModuleToProcess = 'powerlogger.psm1'
        # Module to process is required key word for PS2.0
 #RootModule = 'powerlogger.psm1'
