@@ -1,3 +1,5 @@
+<#
+Working on getting this set up
 Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 
 Resolve-Module Psake, PSDeploy, Pester, BuildHelpers
@@ -14,3 +16,4 @@ $Params = @{
 }
 
 Invoke-PSDeploy @Verbose @Params
+#>
