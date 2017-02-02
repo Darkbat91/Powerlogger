@@ -1,7 +1,15 @@
+#Publish to PowerShell Gallery with this key
 environment:
   my_variable:
     secure: UR2BYlWrmMLdblFfoWkJWlELKz3QhCy0ETah9wJO5Dr/GuUjArGxghDEH2FDyczZ
 test_script:
   - ps: . .\Build\build.ps1
 
-	
+  # Skip on updates to the readme.
+# We can force this by adding [skip ci] or [ci skip] anywhere in commit message 
+skip_commits:
+  message: /updated readme.*|update readme.*s/
+
+build: false
+
+build: false	
