@@ -27,6 +27,8 @@ CHANGELOG
 TODO
 -----------------------------------------------------------------------------------------------------------------
 1. Add functionality to only email last log from start
+2. Fix error script name and path
+3. Pull write logic out of individual functions / re-try if file is open
 	#>
 
 function Verify-CSVHeaders
