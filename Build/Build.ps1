@@ -1,19 +1,16 @@
-<#
-Working on getting this set up
+
 Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 
-Resolve-Module Psake, PSDeploy, Pester, BuildHelpers
+# Install PS Depend
+if(-not (Get-Module -ListAvailable PSDepend))
+{
+    & (Resolve-Path "$PSScriptRoot\helpers\Install-PSDepend.ps1")
+}
+Import-Module PSDepend
 
-Invoke-psake .\psake.ps1
-exit ( [int]( -not $psake.build_success ) )
+$null = Invoke-PSDepend -Path "$PSScriptRoot\build.requirements.psd1" -Install -Import -Force
 
 Set-BuildEnvironment
 
-$Params = @{
-    Path = $ProjectRoot
-    Force = $true
-    Recurse = $false # We keep psdeploy.ps1 test artifacts, avoid deploying those : )
-}
-
-Invoke-PSDeploy @Verbose @Params
-#>
+Invoke-psake $PSScriptRoot\psake.ps1 -taskList $Task -nologo
+exit ( [int]( -not $psake.build_success ) )
