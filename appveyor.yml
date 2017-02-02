@@ -9,7 +9,8 @@ skip_commits:
   message: /updated readme.*|update readme.*s/
 
 build: false    
-    
+
+# Remove deploy for just build and test    
 test_script:
   - ps: . .\Build\build.ps1 -Task Deploy
 
