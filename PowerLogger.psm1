@@ -155,8 +155,6 @@ if ($SCRIPT:TerminalLogging -and $SCRIPT:TerminalLevel -ne "None")
 }
 }
 
-export-modulemember -function Start-Logging
-
 function Write-PLInfo()
 {
 [CmdletBinding()]
@@ -206,8 +204,6 @@ if(($SCRIPT:LoggingLevel -eq "INFO" -or $SCRIPT:LoggingLevel -eq "Debug" -or $SC
     }
 }
 
-export-modulemember -function Write-PLInfo
-
 function Write-PLDebug()
 {
 [CmdletBinding()]
@@ -255,8 +251,6 @@ if ($SCRIPT:LoggingLevel -eq "Debug"  -and ($SCRIPT:writecsv  -or $ForceCSV.IsPr
     Add-Content -Path $LogFile -Value "$timestamp,DEBUG,`"$Sublevel`",`"$originalMessage`""
     }
 }
-
-export-modulemember -function Write-PLDebug
 
 function Write-PLVerbose()
 {
@@ -306,8 +300,6 @@ if (($SCRIPT:LoggingLevel -eq "Debug" -or $SCRIPT:LoggingLevel -eq "Verbose")  -
     }
 }
 
-export-modulemember -function Write-PLVerbose
-
 Function Send-PLLog()
 {
     param($From = "PowerLogger<mog.helpdesk@jacobs.com>",
@@ -353,8 +345,6 @@ Function Send-PLLog()
     }
     
 }
-
-export-modulemember -function send-PLLog
 
 Function Send-pllogging
 {
