@@ -68,11 +68,10 @@ param(
 Process{
 
 
-
+$ScriptNameOrigin = $MyInvocation.ScriptName
 if ($ScriptName -eq $null) # If script name was not set pull from Script
 {
 try{
-$ScriptNameOrigin = $MyInvocation.ScriptName
 $Scriptname = Split-Path $ScriptNameOrigin -Leaf
 
 $ScriptName = $ScriptName.Substring(0,$ScriptName.IndexOf("."))
